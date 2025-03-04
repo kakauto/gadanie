@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Гадание на картах </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                        url('images/kniga_shar_magiia_46753_1920x1080.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 5vw, 3.5em);
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.5rem, 3vw, 2.5em);
+            color: #9b59b6;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .contact-info {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1rem, 2vw, 1.3em);
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .phone-number {
+            color: #9b59b6;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .intro {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4em;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 400;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .service-card {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .swiper {
+            width: 100%;
+            height: 400px;
+            margin: 50px 0;
+        }
+
+        .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #9b59b6, #3498db);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 1.2em;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+        }
+
+        .testimonials {
+            margin: 50px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .service-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .service-card p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2em;
+        }
+
+        .why-me h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .why-me ul {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2em;
+            list-style-position: inside;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .services {
+                grid-template-columns: 1fr;
+            }
+
+            .swiper {
+                height: 300px;
+            }
+
+            .service-card {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .swiper {
+                height: 250px;
+            }
+
+            .cta-button {
+                padding: 12px 25px;
+                font-size: 1.1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Гадание на картах </h1>
+            <div class="name">Рая</div>
+            <div class="contact-info">
+                <a href="tel:+79001234567" class="phone-number">+7 (900) 123-45-67</a>
+            </div>
+            <p class="intro">Добро пожаловать в мой мир, где карты  становятся ключом к пониманию себя и своего жизненного пути.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/photo_2025-03-04_19-04-05.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="images/photo_2025-03-04_19-04-29.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="images/photo_2025-03-04_19-04-35.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="images/photo_2025-03-04_19-04-40.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="images/photo_2025-03-04_19-04-52.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="images/photo_2025-03-04_19-04-58.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="images/photo_2025-03-04_19-05-05.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="images/photo_2025-03-04_19-05-12.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="images/photo_2025-03-04_19-05-17.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="images/photo_2025-03-04_19-05-21.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="images/photo_2025-03-04_19-05-28.jpg" alt=""></div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+
+        <section class="services">
+            <div class="service-card">
+                <h3>Гадание на любовь и отношения</h3>
+                <p>Раскройте тайны ваших отношений и найдите путь к гармонии</p>
+            </div>
+            <div class="service-card">
+                <h3>Гадание на карьеру и финансы</h3>
+                <p>Узнайте о перспективах в профессиональной сфере</p>
+            </div>
+            <div class="service-card">
+                <h3>Гадание на здоровье</h3>
+                <p>Получите подсказки для поддержания вашего благополучия</p>
+            </div>
+        </section>
+
+        <section class="why-me">
+            <h2>Почему стоит выбрать меня</h2>
+            <ul>
+                <li>Многолетний опыт работы с картами </li>
+                <li>Индивидуальный подход к каждому клиенту</li>
+                <li>Конфиденциальность и уважение</li>
+                <li>Точные и подробные интерпретации</li>
+            </ul>
+        </section>
+
+        <div style="text-align: center; margin: 50px 0;">
+            <a href="tel:+79001234567" class="cta-button">Записаться на сеанс</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 Гадание на картах . Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            autoplay: {
+                delay: 3000,
+            },
+        });
+    </script>
+</body>
+</html>
